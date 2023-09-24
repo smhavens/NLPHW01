@@ -1,1 +1,3 @@
-# NLPHW01
+# Text Normalization Tool
+
+To run, download
