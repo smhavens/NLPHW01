@@ -55,7 +55,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog='normalize_text',
         description='This program will take in a txt file and list of desired preproccessing commands and output tokens.',
-        epilog='Please give at least one of the following preprocessing procedures: lowercasing (--lower or -l), stemming (--stem or -s), stopword removal (--word or -w), or number and symbol removal (--number)'
+        epilog='Please give at least one of the following preprocessing procedures: lowercasing (--lower or -l), stemming (--stem or -s), stopword removal (--word or -w), or number and symbol removal (--number or -n)'
     )
     parser.add_argument('filename')
     parser.add_argument('-l', '--lower', action='store_true')
