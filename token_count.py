@@ -68,7 +68,21 @@ def main():
     #     exit("Please input text file and at least one preprocessing command.")
     # print(args.filename, args.lower, args.stem, args.word)
     sorted_dict = sorted(read_file(args).items(), key=lambda x:x[1], reverse=True)
-    print(sorted_dict)
+    # print(sorted_dict)
+    
+    print_list = []
+    for token, count in sorted_dict:
+            print(token, count)
+            print_list.append(token + " " + str(count))
+    with open("results.txt", 'w') as results:
+        results.writelines([word + "\n" for word in print_list])
+        
+    count_list = []
+    with open("histogram_counts.txt", "w") as excel:
+        for token, count in sorted_dict:
+            print(token, count)
+            count_list.append(str(count))
+        excel.writelines([num + "\n" for num in count_list])
     
     
     
