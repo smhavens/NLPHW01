@@ -50,6 +50,7 @@ When developing my software, I focused on both usability and modularity. I wante
 
 ### Sample Output (All done with sherlock.txt will all options used)
 #### First 10 words
+```
 said 486
 upon 464
 holmes 461
@@ -60,8 +61,10 @@ could 286
 mr 274
 little 269
 see 229
+```
 
 #### Last 10 words
+```
 fitness 1
 formatted 1
 ascii 1
@@ -72,6 +75,7 @@ electronic 1
 additional 1
 collections 1
 version 1
+```
 
 #### Generated Histogram
 ![image](https://github.com/smhavens/NLPHW01/assets/55886989/7e37c408-0749-4668-9809-49833ccd1421)
@@ -79,4 +83,15 @@ version 1
 ### Discussion
 #### Findings
 Of the most common words, there are some that can be expected such as "said" in a novel along with "could" and "would". "holmes" also was to be expected as the titular character thought some did catch my attention: particulary "see", "one", "man" and "mister". "see" I can reason as I used a detective novel which naturally will have many observations on the crime scene, the suspects, and other such things. The other four, however, I think help date the story as "one" as a pronoun isn't used often anymore but from my reading of the text is used considerably. Similarly, the fact that "mr" is used so often shows a formality that many recent texts don't adhear to, and "man" can hint at there being few women characters in the text.
-Looking at the least common words, I noticed that some were merely from txt file details on the document, such as "httpsherlockholmes", "electronic", "ascii" and "html". I also noticed that there were more tokens with only 1 appearance than there were of any other count. This shows how while these words on their own are rare, texts will often use many rare words in conjuntion with many of the few common words.
+Looking at the least common words, I noticed that some were merely from txt file details on the document, such as "httpsherlockholmes", "electronic", "ascii" and "html". I also noticed that there were more tokens with only 1 appearance than there were of any other count. This shows how while these words on their own are rare, texts will often use many rare words in conjuntion with many of the few common words. This goes along well with Zipf's law, as we see with War and Peace that there are only select words with high counts but a high frequency of words with lower counts. I removed stop words for my diagram but looking at the top 5 counts with stopwords:
+```
+the 5621
+and 3002
+i 2995
+to 2685
+of 2658
+```
+and they significantly outweigh even the most common non-stop word (said). Removing stopwords impacts the number of tokens far more than the number of words, as the largest part of the histogram without stopwords (around 8 thousand words with 1 to 4 occurances) is trumped by only a handful of stopwords in their total count.
+
+#### What I've Learned
+First, this assignment gave me excellent practice in documentation, as seen by this readme. I was able to note down what steps I need and really think about what libraries I was actively using and if their inclusion (and then required documentation on how to use) was worth it compared to doing it some other way. I got practice using the nltk library, which will be exceptionally useful for later projects considering how much it alleviates the process of stemming or lowercasing text. These were things I more or less expected to learn, but one thing that did catch me a bit off guard was what the token counts taught me about the text itself. I mentioned previously with the most common non-stopwords in The Adventures of Sherlock Holmes having dated words or a much larger amount of masculine terms (mr or man) and analyzing this could be important for understanding the text in broad strokes.
