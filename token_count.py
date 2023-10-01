@@ -51,7 +51,8 @@ def read_file(args):
 def main():
     # if len(sys.argv) < 3:
     #     exit("Please input text file and at least one preprocessing command.")
-        
+    
+    #### ARGLINE PARSER ####
     parser = argparse.ArgumentParser(
         prog='normalize_text',
         description='This program will take in a txt file and list of desired preproccessing commands and output tokens.',
@@ -67,20 +68,27 @@ def main():
     # if args.filename == '':
     #     exit("Please input text file and at least one preprocessing command.")
     # print(args.filename, args.lower, args.stem, args.word)
+    
+    #### READ AND THEN SORT FILE ####
     sorted_dict = sorted(read_file(args).items(), key=lambda x:x[1], reverse=True)
     # print(sorted_dict)
     
+    
+    #### PRINT RESULTS ####
     print_list = []
     for token, count in sorted_dict:
             print(token, count)
             print_list.append(token + " " + str(count))
+            
+    # Results.txt has the exact copy of the console print
     with open("results.txt", 'w') as results:
         results.writelines([word + "\n" for word in print_list])
         
+    # histogram_counts.txt has the numbers only copy of the console print for easy graphing
     count_list = []
     with open("histogram_counts.txt", "w") as excel:
         for token, count in sorted_dict:
-            print(token, count)
+            # print(token, count)
             count_list.append(str(count))
         excel.writelines([num + "\n" for num in count_list])
     
